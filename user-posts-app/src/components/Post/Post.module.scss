@@ -1,0 +1,50 @@
+.post {
+    background-color: black;
+    list-style: none;
+    color: white
+}
+
+.bubble {
+    background-color: goldenrod;
+    width: 148px;
+    height: 148px;
+    border-radius: 25%;
+    float: left;
+    margin: 10px;
+}
+
+.even {
+    float: right;
+}
+
+.user {
+    text-overflow: ellipsis;
+    color: black;
+    width: 124px;
+    height: 124px;
+    padding: 12px;
+    position: absolute;
+    margin: 0;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 125px;
+    overflow: hidden;
+    font-size: 18pt;
+    font-family: "Playfair Display", "Times New Roman", serif;
+}
+
+.textWrapper {
+    margin: 10px;
+}
+
+.title {
+    font-size: 20pt;
+    font-family: "Futura", Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.text {
+    font-size: 16pt;
+    font-family: "Futura", Arial, Helvetica, sans-serif;
+    margin: 20px;
+}

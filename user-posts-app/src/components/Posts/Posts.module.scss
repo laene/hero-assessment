@@ -1,0 +1,8 @@
+.list {
+    padding-inline-start: 0;
+}
+
+li:nth-of-type(even) {
+    background-color: white;
+    color: black;
+}
