@@ -1,0 +1,25 @@
+// COLORS
+$light-grey: #b3b0ab;
+$dark-grey: #333333;
+$soft-white: #fffdf7;
+$bright-white: #ffffff;
+$soft-black: #1c1c1c;
+$gold: #dba800;
+
+//MEDIA QUERY SIZES
+$sm: 480px;
+$md: 768px;
+$lg: 1024px;
+$xl: 1201px;
+
+//FONT FAMILIES
+$sans: "Futura", Arial, Helvetica, sans-serif;
+$serif: "Playfair Display", "Times New Roman", serif;
+
+ul, li, h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}

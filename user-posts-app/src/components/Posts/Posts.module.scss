@@ -1,8 +1,12 @@
+@import '../../SharedStyles/styles.scss';
+
 .list {
     padding-inline-start: 0;
 }
 
-li:nth-of-type(even) {
-    background-color: white;
-    color: black;
+.wrapper {
+    li:nth-of-type(even) {
+        background-color: $soft-white;
+        color: $soft-black;
+    }
 }
