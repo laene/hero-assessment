@@ -20,8 +20,6 @@ export default function FilterMenu({users, filterPosts, setOneSelected, setAllSe
 
     function handleChange(e, id) {
         e.stopPropagation();
-        console.log(id);
-        console.log(filters);
         setOneSelected(id);
         if (filters.includes(id)) {
             let newFilters =[];
@@ -34,7 +32,7 @@ export default function FilterMenu({users, filterPosts, setOneSelected, setAllSe
         } else {
             filters.push(id);
         }
-        console.log(filters);
+        console.log(filters.length);
         filterPosts(filters);
         
     }
@@ -56,25 +54,23 @@ export default function FilterMenu({users, filterPosts, setOneSelected, setAllSe
         const checkboxes = users.map(user => {
             return (
                 <li key={user.id} className={styles.li}>
-                    <input id = {user.id} type="checkbox" name={user.id} checked={user.selected}
+                    <input id= {user.id} type="checkbox" name={user.id} checked={user.selected}
                     className={styles.checkbox} onClick={(e) => handleChange(e, user.id)}/>
-                    <span>{user.display}</span>
+                    <label id={user.id} className={styles.user}>{user.display}</label>
                 </li>
             )
         });
 
     if (users !== null && users.length) {
         return (
-            <div>
-                <button className={clsx(styles.button, open && styles.close)} onClick={onButtonClick}>{!open ? "Filter" : "Close"}</button>
+            <div className={styles.container}>
+                <button className={styles.button} onClick={onButtonClick}>{!open ? "Filter" : "Close"}</button>
                 <div className={clsx(styles.modal, open && styles.open)}>
-                    <h6>Filter by user</h6>
+                    <span className={styles.filterBy}>Filter by user</span>
                     <ul>
                         <li className={styles.li}>
-                            <button onClick={handleSelectAll}>Select All</button>
-                        </li>
-                        <li>
-                            <button onClick={handleDeselectAll}>Deselect All</button>
+                            <button className={clsx(styles.multiSelect)} onClick={handleSelectAll}>Select All</button>
+                            <button className={clsx(styles.multiSelect)} onClick={handleDeselectAll}>Deselect All</button>
                         </li>
                         {checkboxes}
                     </ul>
@@ -88,12 +84,12 @@ export default function FilterMenu({users, filterPosts, setOneSelected, setAllSe
 }
 
 FilterMenu.propTypes = {
-    users: PropTypes.arrayOf(shape({
+    users: PropTypes.arrayOf(PropTypes.shape({
         id: PropTypes.number,
         display: PropTypes.string,
-        selected: PropTypes.bool
+        selected: PropTypes.bool,
     })),
     filterPosts: PropTypes.func,
     setOneSelected: PropTypes.func,
-    setAllSelected: PropTypes.func
+    setAllSelected: PropTypes.func,
 }

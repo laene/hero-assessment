@@ -1,8 +1,8 @@
 import React from 'react';
-import './App.scss';
+import styles from './App.module.scss';
 import Posts from '../components/Posts/Posts';
-import TopNav from '../components/TopNav/TopNav';
-
+import FilterMenu from '../components/FilterMenu/FilterMenu';
+import PageTitle from '../components/PageTitle/PageTitle'
 
 async function getData(url) {
   try {
@@ -112,18 +112,28 @@ class ElenasReactApp extends React.Component {
   }
 
   render() {
-    if (this.state.filteredPosts) {
       return (
         <div className="page-body">
-          <TopNav  users={this.state.users} filterPosts={this.filterPosts} setOneSelected={this.setOneSelected} setAllSelected={this.setAllSelected}/>
+          <div className={styles.topNav}>
+          <PageTitle/>
+            {this.state.filteredPosts &&
+              <FilterMenu 
+                users={this.state.users} 
+                filterPosts={this.filterPosts} 
+                setOneSelected={this.setOneSelected} 
+                setAllSelected={this.setAllSelected}
+              />
+            }
+          </div>
+          {this.state.filteredPosts ? 
           <Posts posts={this.state.filteredPosts}/>
+          :
+          <div className={styles.loaderWrapper}>
+            <div class={styles.loader}></div>
+          </div>
+          }
         </div>
-      );
-    } else {
-      return (
-        <p>Not ready :(</p>
       )
-    }
   }
   
 }
