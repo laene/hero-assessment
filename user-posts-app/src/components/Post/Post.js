@@ -1,9 +1,10 @@
 import React from 'react';
 import styles from './Post.module.scss';
 import clsx from 'clsx';
+import PropTypes from 'prop-types';
 
 export default function Post({userDisplay, title, text, count}) {
-    const even = count % 2 == 0;
+    const even = count % 2 === 0;
     return (
         <li className={styles.post}>
             <div className={clsx(styles.bubble, even && styles.even)}>
@@ -17,3 +18,10 @@ export default function Post({userDisplay, title, text, count}) {
     )
         
 };
+
+Post.propTypes = {
+    userDisplay: PropTypes.string,
+    title: PropTypes.string,
+    text: PropTypes.string,
+    count: PropTypes.number
+}

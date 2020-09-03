@@ -1,9 +1,9 @@
 import React from 'react';
 import styles from './Posts.module.scss';
 import Post from '../Post/Post';
+import PropTypes, { shape } from 'prop-types';
 
 export default function Posts({posts = []}) {
-    console.log(posts);
         let count = 0;
         const postList = posts.map(post => {
             count = count + 1;
@@ -24,3 +24,12 @@ export default function Posts({posts = []}) {
             </div>
         )
 };
+
+Posts.propTypes = {
+    posts: PropTypes.arrayOf(shape({
+        postId: PropTypes.number,
+        userDisplay: PropTypes.string,
+        title: PropTypes.string,
+        body: PropTypes.string
+    }))
+}

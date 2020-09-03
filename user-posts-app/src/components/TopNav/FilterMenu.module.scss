@@ -2,4 +2,25 @@
     position: absolute;
     top: 10px;
     left: 10px;
+    z-index: 3;
+}
+
+.close {
+     position: fixed;
+}
+
+.modal {
+    display: none;
+    width: 100%;
+    z-index: 2;
+    background-color: goldenrod;
+    position: fixed;
+}
+
+.open {
+    display: block;
+}
+
+.li {
+    list-style: none;
 }
