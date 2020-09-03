@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './App.module.scss';
 import Posts from '../components/Posts/Posts';
 import FilterMenu from '../components/FilterMenu/FilterMenu';
-import PageTitle from '../components/PageTitle/PageTitle'
 
 async function getData(url) {
   try {
@@ -52,7 +51,6 @@ async function getPostsInfo(usersArray) {
     console.log(error);
   }
 }
-
 
 class ElenasReactApp extends React.Component {
   constructor(props) {
@@ -115,7 +113,7 @@ class ElenasReactApp extends React.Component {
       return (
         <div className="page-body">
           <div className={styles.topNav}>
-          <PageTitle/>
+            <h1 className={styles.title}>Elena's React App</h1>
             {this.state.filteredPosts &&
               <FilterMenu 
                 users={this.state.users} 
@@ -126,16 +124,16 @@ class ElenasReactApp extends React.Component {
             }
           </div>
           {this.state.filteredPosts ? 
-          <Posts posts={this.state.filteredPosts}/>
+            <Posts posts={this.state.filteredPosts}/>
           :
-          <div className={styles.loaderWrapper}>
-            <div class={styles.loader}></div>
-          </div>
+            <div className={styles.loaderWrapper}>
+              <div class={styles.loader}></div>
+            </div>
           }
         </div>
       )
   }
-  
 }
 
 export default ElenasReactApp;
+

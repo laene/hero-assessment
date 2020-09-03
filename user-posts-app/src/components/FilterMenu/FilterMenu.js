@@ -1,9 +1,4 @@
-//hamburger for mobile, button that says "Filter" for desktop
-//dropdown menu (show expand animation)
-//will also need components for individual checkbox filters etc
-//work on this after connecting context and api and are actually showing post data
-
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import styles from './FilterMenu.module.scss';
 import clsx from 'clsx'; 
 import PropTypes from 'prop-types';
