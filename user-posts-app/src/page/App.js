@@ -77,17 +77,14 @@ class ElenasReactApp extends React.Component {
 
 
   filterPosts = (filters) => {
-    console.log(filters);
     let filteredPosts;
     if (!Array.isArray(filters) || filters.length < 1) {
       filteredPosts = this.state.posts;
-      console.log(filteredPosts);
     } else {
      filteredPosts = this.state.posts.filter(post => {
      return filters.includes(post.userId);
     })
   }
-    console.log(filteredPosts);
     this.setState({filteredPosts: filteredPosts});
 }
 

@@ -27,7 +27,7 @@ export default function FilterMenu({users, filterPosts, setOneSelected, setAllSe
         } else {
             filters.push(id);
         }
-        console.log(filters.length);
+
         filterPosts(filters);
         
     }
